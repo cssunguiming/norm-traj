@@ -31,7 +31,7 @@ class Token_Embedding(nn.Module):
         super(Token_Embedding, self).__init__()
 
         self.d_model = d_model
-        self.token_embed = nn.Embedding(token_size, d_model-10, padding_idx=0)
+        self.token_embed = nn.Embedding(token_size, d_model, padding_idx=0)
         # self.token_embed = nn.Embedding(token_size, d_model-10, padding_idx=0)
         self.time_embed = nn.Embedding(49, 10, padding_idx=0)
 
