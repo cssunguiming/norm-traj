@@ -37,8 +37,8 @@ class Token_Embedding(nn.Module):
 
     def forward(self, x, time):
         # Embed = self.token_embed(x) + self.time_embed(time)
-        Embed = torch.cat((self.token_embed(x), self.time_embed(time)), dim=-1)
-        # Embed = self.token_embed(x)
+        # Embed = torch.cat((self.token_embed(x), self.time_embed(time)), dim=-1)
+        Embed = self.token_embed(x)
 
         # Embed = torch.cat((self.token_embed(x), self.time_embed(time)), dim=-1)
         return Embed * math.sqrt(self.d_model)
