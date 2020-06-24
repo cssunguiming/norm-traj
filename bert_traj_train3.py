@@ -198,7 +198,7 @@ def main(Epoch=200, Bert_Pretrain=False, Batch_size=10, Pretrained=False, log='p
     head_n = 10
     d_model = 500
     N_layers = 3
-    dropout = 0.5
+    dropout = 0.1
 
     # head_n = 10
     # d_model = 400
