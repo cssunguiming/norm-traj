@@ -195,10 +195,10 @@ def run(epoch, model, optimizer, device, train_data, train_traj_idxx, valid_data
 
 def main(Epoch=200, Bert_Pretrain=False, Batch_size=10, Pretrained=False, log='predict'):
 
-    head_n = 5
+    head_n = 10
     d_model = 400
-    N_layers = 3
-    dropout = 0.2
+    N_layers = 10
+    dropout = 0.3
 
     # head_n = 10
     # d_model = 400
