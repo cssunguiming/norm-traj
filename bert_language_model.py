@@ -41,7 +41,7 @@ class Predict_Model(nn.Module):
 
         # self.place_Linear.weight = Bert_Traj_Model.Embed.token_embed.token_embed.weight
         # self.time_Linear.weight = Bert_Traj_Model.Embed.token_embed.time_embed.weight
-        self.dropout = nn.Dropout(0.7)
+        self.dropout = nn.Dropout(0.5)
 
         for p in self.parameters():
             if p.dim() > 1:
@@ -49,6 +49,7 @@ class Predict_Model(nn.Module):
 
     def forward(self, x, input_time, max_len):
         x = self.bert(x, input_time, max_len)
+        x = self.dropout(x)
         # logit: [batch_size, seq_size, d_]
         logit1 = self.place_Linear(x)
         # logit1 = self.dropout(logit1)
