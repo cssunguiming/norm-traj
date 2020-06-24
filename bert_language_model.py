@@ -50,7 +50,7 @@ class Predict_Model(nn.Module):
     def forward(self, x, input_time, max_len):
         x = self.bert(x, input_time, max_len)
         # logit: [batch_size, seq_size, d_]
-        logit1 = self.place_Linear(x[:,:,-10])
+        logit1 = self.place_Linear(x[:,:,:-10])
         # logit1 = self.dropout(logit1)
         # logit2 = self.time_Linear(x[:,:,-10:])
 
